@@ -1,31 +1,24 @@
-.button {
-  background-color: #ddd;
-  border: none;
-  color: black;
-  padding: 10px 20px;
+.fizz, .buzz, .fizzbuzz, .number {
+  padding: 10px;
+  width: 86px;
+  border: 1px solid;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 20px;
 }
-
-table,
-tr,
-td, #cell {
-  border: 1px solid black;
+.fizz {
+  background-color: rgba(17, 220, 37, 0.5);
 }
-
-table {
-  border-collapse: collapse;
-  margin: 0 auto;
+.buzz {
+  background-color: rgba(255, 0, 0, 0.5);
 }
-
-tr {
-  height: 20px;
+.fizzbuzz {
+  background-color: rgba(255, 153, 0, 0.5);
 }
-
-td {
-  width: 20px;
+#outputGrid {
+  padding: 5%;
+}
+h1, h4 {
+  text-align: center;
+}
+.navbar{
+  background-color: aqua;
 }

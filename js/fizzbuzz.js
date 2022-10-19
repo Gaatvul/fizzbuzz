@@ -9,27 +9,33 @@ updateDisplayedSliderValues();
 function checkForFizzBuzz() {
 
     var numberToCountTo, fizzNumber, buzzNumber;
-    var finalArray = [];
 
     numberToCountTo = updateFinalNumber();
     fizzNumber = updateFizzNumber();
     buzzNumber = updateBuzzNumber();
     updateDisplayedSliderValues();
 
+    document.getElementById("outputGrid").innerHTML = ""
+
     for (var i = 1; i <= numberToCountTo; i++) {
         if (i % 15 == 0) {
-            finalArray.push("Fizz Buzz");
+
+            document.getElementById("outputGrid").innerHTML += "<div class=\"fizzbuzz\">Fizz Buzz</div>";
+
         } else if (i % fizzNumber == 0) {
-            finalArray.push("Fizz");
+
+            document.getElementById("outputGrid").innerHTML += "<div class=\"fizz\">Fizz</div>";
+
         } else if (i % buzzNumber == 0) {
-            finalArray.push("Buzz");
+
+            document.getElementById("outputGrid").innerHTML += "<div class=\"buzz\">Buzz</div>";
+
         } else {
-            finalArray.push(i.toString());
+
+            document.getElementById("outputGrid").innerHTML += "<div class=\"number\">" + i.toString() + "</div>";
+
         }
     }
-
-    document.getElementById("output").innerHTML = finalArray;
-    makeGrid(fizzNumber, buzzNumber);
 
 }
 
@@ -51,24 +57,4 @@ function updateBuzzNumber() {
 function updateDisplayedSliderValues() {
     document.getElementById("fizzSliderValue").innerHTML = document.getElementById("fizzSlider").value;
     document.getElementById("buzzSliderValue").innerHTML = document.getElementById("buzzSlider").value;
-}
-
-function makeGrid(rows, cols) {
-    let fizzBuzzGrid = document.getElementById("fizzBuzzGrid");
-    fizzBuzzGrid.replaceChildren();
-
-    for (let i = 0; i < rows; i++) {
-        let newRow = document.createElement("tr");
-        newRow.id = "row" + i;
-
-        fizzBuzzGrid.appendChild(newRow);
-        let rowW = document.getElementById("row" + i);
-
-        for (let j = 0; j < cols; j++) {
-            let newCell = document.createElement("td");
-            newCell.id = "cell"
-            rowW.appendChild(newCell);
-            
-        }
-    }
 }
