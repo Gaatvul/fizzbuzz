@@ -10,7 +10,7 @@ function checkForFizzBuzz() {
 
     var numberToCountTo, fizzNumber, buzzNumber;
 
-    numberToCountTo = updateFinalNumber();
+    numberToCountTo = updateNumberToCountTo();
     fizzNumber = updateFizzNumber();
     buzzNumber = updateBuzzNumber();
     updateDisplayedSliderValues();
@@ -20,26 +20,26 @@ function checkForFizzBuzz() {
     for (var i = 1; i <= numberToCountTo; i++) {
         if (i % 15 == 0) {
 
-            document.getElementById("outputGrid").innerHTML += "<div class=\"fizzbuzz\">Fizz Buzz</div>";
+            document.getElementById("outputGrid").innerHTML += "<div><div class=\"fizz\">Fizz</div><div class=\"buzz\">Buzz</div></div>";
 
         } else if (i % fizzNumber == 0) {
 
-            document.getElementById("outputGrid").innerHTML += "<div class=\"fizz\">Fizz</div>";
+            document.getElementById("outputGrid").innerHTML += "<div><div class=\"fizz\">Fizz</div><div class=\"noBuzz\"></div></div>";
 
         } else if (i % buzzNumber == 0) {
 
-            document.getElementById("outputGrid").innerHTML += "<div class=\"buzz\">Buzz</div>";
+            document.getElementById("outputGrid").innerHTML += "<div><div class=\"noFizz\"></div><div class=\"buzz\">Buzz</div></div>";
 
         } else {
 
-            document.getElementById("outputGrid").innerHTML += "<div class=\"number\">" + i.toString() + "</div>";
+            document.getElementById("outputGrid").innerHTML += "<div class=\"number\"><p>" + i.toString() + "</p></div>";
 
         }
     }
 
 }
 
-function updateFinalNumber() {
+function updateNumberToCountTo() {
 
     return document.getElementById("finalNumber").value;
 }
@@ -57,4 +57,5 @@ function updateBuzzNumber() {
 function updateDisplayedSliderValues() {
     document.getElementById("fizzSliderValue").innerHTML = document.getElementById("fizzSlider").value;
     document.getElementById("buzzSliderValue").innerHTML = document.getElementById("buzzSlider").value;
+    document.getElementById("finalNumberSliderValue").innerHTML = document.getElementById("finalNumber").value;
 }

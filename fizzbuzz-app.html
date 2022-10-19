@@ -11,9 +11,9 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color:#29b5f65b;">
 
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(163, 208, 233);">
+    <nav class="navbar navbar-expand-lg" >
         <div class="container-fluid">
             <a class="navbar-brand" href="#">CarbonatedRattle</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -42,15 +42,11 @@
         </div>
     </nav>
 
-    <div class="mx-auto" style="width:75%;">
-            <h1>CarbonatedRattle</h1>
-            <h4>A FizzBuzz App</h4>
-    </div>
-
     <div class="d-flex justify-content-evenly">
         <div class="control">
-            <input type="number" id="finalNumber" value="100">
-            <button class="btn btn-primary" onclick="checkForFizzBuzz()">Run</button>
+            <!-- Users are limited to a maximum count of 250 as there are performance issues beyond this number. -->
+            <input type="range" id="finalNumber" min="1" max="250" value="100" oninput="checkForFizzBuzz()">
+            <p id="finalNumberSliderValue"></p>
         </div>
         <div class="fizzSliderContainer control">
             <input type="range" min="1" max="10" value="3" oninput="checkForFizzBuzz()" class="fizzSlider"
