@@ -6,6 +6,19 @@ body{
   margin:0;
   padding:0;
 }
+#outputControls{
+  margin: 1%;
+}
+input[type=range][orient=vertical] {
+  -webkit-appearance: slider-vertical;
+}
+.control{
+  text-align: center;
+}
+.control input {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 .fizz, .buzz, .fizzbuzz, .number, .noBuzz, .noFizz {
   margin: 2px;
   padding: 5px;

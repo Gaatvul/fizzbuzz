@@ -13,7 +13,7 @@
 
 <body style="background-color:#29b5f65b;">
 
-    <nav class="navbar navbar-expand-lg" >
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">CarbonatedRattle</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -42,26 +42,45 @@
         </div>
     </nav>
 
-    <div class="d-flex justify-content-evenly">
-        <div class="control">
-            <!-- Users are limited to a maximum count of 250 as there are performance issues beyond this number. -->
-            <input type="range" id="finalNumber" min="1" max="250" value="100" oninput="checkForFizzBuzz()">
-            <p id="finalNumberSliderValue"></p>
+    <div class="d-flex">
+        <div id="outputControls">
+            <div class="control">
+                <!-- Users are limited to a maximum count of 250 as there are performance issues beyond this number. -->
+                <input type="range" id="finalNumber" min="1" max="250" value="100" orient="vertical"
+                    oninput="checkForFizzBuzz()">
+                <div id="finalNumberSliderValue"></div>
+            </div>
+            <div class="fizzSliderContainer control">
+                <input type="range" min="1" max="10" value="3" orient="vertical" oninput="checkForFizzBuzz()"
+                    class="fizzSlider" id="fizzSlider">
+                <div id="fizzSliderValue"></div>
+            </div>
+            <div class="buzzSliderContainer control">
+                <input type="range" min="1" max="10" value="5" orient="vertical" oninput="checkForFizzBuzz()"
+                    class="buzzSlider" id="buzzSlider">
+                <div id="buzzSliderValue"></div>
+            </div>
         </div>
-        <div class="fizzSliderContainer control">
-            <input type="range" min="1" max="10" value="3" oninput="checkForFizzBuzz()" class="fizzSlider"
-                id="fizzSlider">
-            <p id="fizzSliderValue"></p>
-        </div>
-        <div class="buzzSliderContainer control">
-            <input type="range" min="1" max="10" value="5" oninput="checkForFizzBuzz()" class="buzzSlider"
-                id="buzzSlider">
-            <p id="buzzSliderValue"></p>
+        <div id="outputGrid" class="d-flex align-content-center flex-wrap">
+            <div id="output"></div>
         </div>
     </div>
-    <div id="outputGrid" class="d-flex align-content-center flex-wrap">
-        <div id="output"></div>
-    </div>
+
+    <section class="sticky">
+        <div class="bubbles">
+            <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          
+        </div>
+      </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
