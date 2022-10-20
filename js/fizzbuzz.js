@@ -18,7 +18,7 @@ function checkForFizzBuzz() {
     document.getElementById("outputGrid").innerHTML = ""
 
     for (var i = 1; i <= numberToCountTo; i++) {
-        if (i % 15 == 0) {
+        if ((i % buzzNumber == 0) && (i % fizzNumber == 0)) {
 
             document.getElementById("outputGrid").innerHTML += "<div><div class=\"fizz\">Fizz</div><div class=\"buzz\">Buzz</div></div>";
 

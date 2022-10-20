@@ -16,8 +16,8 @@ input[type=range][orient=vertical] {
   text-align: center;
 }
 .control input {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 .fizz, .buzz, .fizzbuzz, .number, .noBuzz, .noFizz {
   margin: 2px;
