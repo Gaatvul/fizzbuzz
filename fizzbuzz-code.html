@@ -7,14 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fizz Buzz - The Code</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/prism.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body style="background-color:#29b5f65b;">
+<body style="background-color:#f9f9f9;">
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
+            <img src="./img/logo.png" alt="CarbonatedRattle" width="30" height="40">
             <a class="navbar-brand" href="#">CarbonatedRattle</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,19 +32,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                    <li class="nav-item d-flex align-items-center">
+                        <span class="material-symbols-outlined" style="opacity: 50%;">home</span>
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-flex align-items-center">
+                        <span class="material-symbols-outlined" style="opacity: 50%;">play_arrow</span>
                         <a class="nav-link" href="./fizzbuzz-app.html">The App</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-flex align-items-center">
+                        <span class="material-symbols-outlined">code</span>
                         <a class="nav-link active" href="./fizzbuzz-code.html">The Code</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-flex align-items-center">
+                        <img src="img/GitHub-Mark-32px.png" width="22" height="22" style="opacity: 50%;" alt="GitHub logo">
                         <a class="nav-link" href="https://github.com/Gaatvul/fizzbuzz">Git Repo</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-flex align-items-center">
+                        <span class="material-symbols-outlined" style="opacity: 50%;">description</span>
                         <a class="nav-link" href="./about.html">About</a>
                     </li>
                 </ul>
@@ -42,26 +57,295 @@
         </div>
     </nav>
 
+    <div class="row m-4">
+        <div class="col border-bottom border-dark">
+            <h1 class="text-start">The Code</h1>
+            <h6 class="text-start">The code for this website.</h6>
+        </div>
+        <div class="row">
+            <div class="accordion gy-5">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed border border-dark" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
+                            Javascript
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>This is the entry point into the app. Extra forward slashes were added in the injected
+                                HTML so that they could be visible when using Prism.js to display the code. </p>
+                            <pre data-line="18,22,26,30"><code class="language-js">
+updateDisplayedSliderValues();
+
+function checkForFizzBuzz() {
+
+    var numberToCountTo, fizzNumber, buzzNumber;
+
+    numberToCountTo = updateNumberToCountTo();
+    fizzNumber = updateFizzNumber();
+    buzzNumber = updateBuzzNumber();
+    updateDisplayedSliderValues();
+
+    document.getElementById("outputGrid").innerHTML = ""
+
+    for (var i = 1; i <= numberToCountTo; i++) {
+        if ((i % buzzNumber == 0) && (i % fizzNumber == 0)) {
+
+            document.getElementById("outputGrid").innerHTML += "<\div><\div class=\"fizz\">Fizz<\/div><\div class=\"buzz\">Buzz<\/div><\/div>";
+
+        } else if (i % fizzNumber == 0) {
+
+            document.getElementById("outputGrid").innerHTML += "<\div><\div class=\"fizz\">Fizz<\/div><\div class=\"noBuzz\"><\/div><\/div>";
+
+        } else if (i % buzzNumber == 0) {
+
+            document.getElementById("outputGrid").innerHTML += "<\div><\div class=\"noFizz\"><\/div><\div class=\"buzz\">Buzz<\/div><\/div>";
+
+        } else {
+
+            document.getElementById("outputGrid").innerHTML += "<\div class=\"number\"><\p>" + i.toString() + "<\/p><\/div>";
+
+        }
+    }
+
+}
+
+function updateNumberToCountTo() {
+
+    return document.getElementById("finalNumber").value;
+}
+
+function updateFizzNumber() {
+
+    return document.getElementById("fizzSlider").value;
+}
+
+function updateBuzzNumber() {
+
+    return document.getElementById("buzzSlider").value;
+}
+
+function updateDisplayedSliderValues() {
+    document.getElementById("fizzSliderValue").innerHTML = document.getElementById("fizzSlider").value;
+    document.getElementById("buzzSliderValue").innerHTML = document.getElementById("buzzSlider").value;
+    document.getElementById("finalNumberSliderValue").innerHTML = document.getElementById("finalNumber").value;
+}
+                                </code></pre>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed border border-dark" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            CSS
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Some of the website's style came from custom CSS.
+                            <pre><code class="language-css">
+body,html{
+    width:100%;
+    height: 100%;
+    }
+    body{
+    margin:0;
+    padding:0;
+    }
+    #outputControls{
+    margin: 1%;
+    }
+    input[type=range][orient=vertical] {
+    -webkit-appearance: slider-vertical;
+    }
+    .control{
+    text-align: center;
+    }
+    .control input {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    }
+    .fizz, .buzz, .fizzbuzz, .number, .noBuzz, .noFizz {
+    margin: 2px;
+    padding: 5px;
+    width: 86px;
+    border: 1px solid;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    }
+    .noBuzz, .noFizz {
+    height: 36px;
+    }
+    .fizz {
+    border-top-left-radius: 25px;
+    background-color: rgba(17, 220, 37, 0.5);
+    }
+    .noFizz {
+    border-top-left-radius: 25px;
+    }
+    .buzz {
+    border-bottom-right-radius: 25px;
+    background-color: rgba(255, 0, 0, 0.5);
+    }
+    .noBuzz {
+    border-bottom-right-radius: 25px;
+    }
+    .number {
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    text-align: center;
+    }
+    .number p {
+    margin: 25%;
+    }
+    #outputGrid {
+    padding: 5%;
+    }
+    h1, h4 {
+    text-align: center;
+    }
+    .navbar{
+    background-color: #ede5e5;
+    }
+    .bubbles{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    z-index: -1;;
+    overflow:hidden;
+    top:0;
+    left:0;
+    }
+    .bubble{
+    position: absolute;
+    bottom:-100px;
+    width:40px;
+    height: 40px;
+    background:	#ede5e5;
+    border-radius:50%;
+    opacity:0.5;
+    animation: rise 10s infinite ease-in;
+    }
+    .bubble:nth-child(1){
+    width:40px;
+    height:40px;
+    left:10%;
+    animation-duration:8s;
+    }
+    .bubble:nth-child(2){
+    width:20px;
+    height:20px;
+    left:20%;
+    animation-duration:5s;
+    animation-delay:1s;
+    }
+    .bubble:nth-child(3){
+    width:50px;
+    height:50px;
+    left:35%;
+    animation-duration:7s;
+    animation-delay:2s;
+    }
+    .bubble:nth-child(4){
+    width:80px;
+    height:80px;
+    left:50%;
+    animation-duration:11s;
+    animation-delay:0s;
+    }
+    .bubble:nth-child(5){
+    width:35px;
+    height:35px;
+    left:55%;
+    animation-duration:6s;
+    animation-delay:1s;
+    }
+    .bubble:nth-child(6){
+    width:45px;
+    height:45px;
+    left:65%;
+    animation-duration:8s;
+    animation-delay:3s;
+    }
+    .bubble:nth-child(7){
+    width:90px;
+    height:90px;
+    left:70%;
+    animation-duration:12s;
+    animation-delay:2s;
+    }
+    .bubble:nth-child(8){
+    width:25px;
+    height:25px;
+    left:80%;
+    animation-duration:6s;
+    animation-delay:2s;
+    }
+    .bubble:nth-child(9){
+    width:15px;
+    height:15px;
+    left:70%;
+    animation-duration:5s;
+    animation-delay:1s;
+    }
+    .bubble:nth-child(10){
+    width:90px;
+    height:90px;
+    left:25%;
+    animation-duration:10s;
+    animation-delay:4s;
+    }
+    @keyframes rise{
+    0%{
+        bottom:-100px;
+        transform:translateX(0);
+    }
+    50%{
+        transform:translate(100px);
+    }
+    100%{
+        bottom:1080px;
+        transform:translateX(-200px);
+    }
+    }     
+                                </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
+    <script src="js/prism.js"></script>
 
 </body>
 
 <section class="sticky">
     <div class="bubbles">
         <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+
     </div>
-  </section>
+</section>
 
 </html>
